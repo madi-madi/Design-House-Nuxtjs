@@ -49,6 +49,7 @@ export default {
   */
   buildModules: [
     '@nuxt/typescript-build',
+    '@nuxtjs/router',
   ],
   /*
   ** Nuxt.js modules
