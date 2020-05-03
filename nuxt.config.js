@@ -58,6 +58,7 @@ export default {
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/auth',
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
@@ -66,6 +67,20 @@ export default {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/login', method: 'post', propertyName: 'token' },
+          logout: { url: '/logout', method: 'post' },
+          user: { url: '/me', method: 'get', propertyName: 'data' }
+        },
+        // tokenRequired: true,
+        // tokenType: 'bearer'
+        // autoFetchUser: true
+      }
+    }
+  },
   axios: {
     baseUrl:process.env.APP_URL
   },

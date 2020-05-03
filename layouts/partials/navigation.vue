@@ -55,6 +55,7 @@
                 </div>
 
                 <!-- Before Login -->
+                <template v-if="!$auth.loggedIn">
                 <ul class="before-login font-14 fw-300 text-uppercase">
                     <li>
                         <!-- <a href="#">Sign up</a> -->
@@ -66,7 +67,9 @@
 
                     </li>
                 </ul>
+                </template>
                 <!-- End Before Login -->
+                <template v-else>
 
                 <!-- After Login -->
                 <ul class="author-page white-path">
@@ -129,6 +132,8 @@
                     <!-- End Profile Dropdown -->
                 </ul>
                 <!-- End After Login -->
+                </template>
+
             </nav>
   </header>
 </template>
