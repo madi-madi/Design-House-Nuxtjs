@@ -55,7 +55,7 @@
                 </div>
 
                 <!-- Before Login -->
-                <ul class="before-login font-14 fw-300 text-uppercase d-none">
+                <ul class="before-login font-14 fw-300 text-uppercase">
                     <li>
                         <a href="#">Sign up</a>
                     </li>
