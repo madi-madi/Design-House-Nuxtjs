@@ -80,7 +80,7 @@
                         >
                             <img
                                 class="user-thumb"
-                                src="assets/images/profile.png"
+                                src="~assets/images/profile.png"
                                 alt="Neba Funwi-Gabga"
                             />
                             <div class="usr-info">
