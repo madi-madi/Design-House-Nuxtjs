@@ -5,22 +5,33 @@
                     <h1 class="text-uppercase fw-500 mb-4 text-center font-22">
                         Login
                     </h1>
-                    <form class="auth-form" action="" method="">
+                    <form class="auth-form" action="" method="" @submit.prevent="submit">
+                        <alert-error :form="form" v-if="form.errors.has('verification')">
+                            {{ form.errors.get('verification') }}
+                        <nuxt-link :to="{name:'verificationResend'}">Resend email</nuxt-link>
+
+                        </alert-error>
                         <div class="form-group">
                             <input
                                 type="text"
+                                v-model="form.email"
                                 name="email"
                                 class="form-control form-control-lg font-14 fw-300"
+                                :class="{ 'is-invalid': form.errors.has('email') }"
                                 placeholder="Email"
                             />
+                            <has-error :form="form" field="email"></has-error>
                         </div>
                         <div class="form-group">
                             <input
+                                v-model="form.password"
                                 type="password"
                                 name="password"
                                 class="form-control form-control-lg font-14 fw-300"
+                                :class="{ 'is-invalid': form.errors.has('password') }"
                                 placeholder="Password"
                             />
+                            <has-error :form="form" field="password"></has-error>
                         </div>
                         <div class="mt-4 mb-4 clearfix">
                             <a class="forgot-pass color-blue font-14 fw-400" href="#"> Forgot password? </a>
@@ -44,7 +55,30 @@
 
 <script>
 export default {
+data(){
+    return {
+        form:this.$vform({
+            email:'',
+            password:'',
+        })
+    }
+},
+methods:{
 
+    submit(){
+        this.$auth.loginWith('local',{
+            data:this.form
+        })
+        .then(res=>{
+            this.form.reset();
+            console.log(res);
+        })
+        .catch(error=>{
+            console.log(error.response.data.errors);
+            this.form.errors.set(error.response.data.errors)
+        })
+    }
+}
 }
 </script>
 

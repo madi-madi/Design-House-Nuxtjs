@@ -8,6 +8,8 @@ const routes = [
   { path: '/', name: 'index', component: page('index.vue') },
   { path: '/login', name: 'login', component: page('auth/login.vue') },
   { path: '/register', name: 'register', component: page('auth/register.vue') },
+  { path: '/verification/verify/:id', name: 'verification', component: page('auth/verification/verify.vue') },
+  { path: '/verification/resend', name: 'verificationResend', component: page('auth/verification/resend.vue') },
 
 ];
 
