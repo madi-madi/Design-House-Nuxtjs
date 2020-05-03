@@ -32,7 +32,9 @@
                         </div>
                         <p class="font-14 fw-400 text-center mt-4">
                             Don't have an account yet?
-                            <a class="color-blue" href="#"> Create an account</a>
+                            <!-- <a class="color-blue" href="#"> Create an account</a> -->
+                        <nuxt-link :to="{name:'register'}">Create an account</nuxt-link>
+
                         </p>
                     </form>
                 </div>

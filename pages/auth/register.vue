@@ -54,7 +54,9 @@
                         </div>
                         <p class="font-14 fw-400 text-center mt-4">
                             Already have an account?
-                            <a class="color-blue" href="#"> Login</a>
+                            <!-- <a class="color-blue" href="#"> Login</a> -->
+                        <nuxt-link :to="{name:'login'}">Login</nuxt-link>
+
                         </p>
                     </form>
                 </div>
