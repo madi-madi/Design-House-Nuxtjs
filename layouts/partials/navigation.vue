@@ -123,7 +123,7 @@
                                 Setting
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" title="Sign Out">
+                            <a class="dropdown-item" href="javascript:;" @click.prevent="logout" title="Sign Out">
                                 <i class="fa fa-lock"></i>
                                 Sign Out
                             </a>
@@ -140,7 +140,11 @@
 
 <script>
 export default {
-
+methods:{
+    logout(){
+        this.$auth.logout();
+    }
+}
 };
 </script>
 

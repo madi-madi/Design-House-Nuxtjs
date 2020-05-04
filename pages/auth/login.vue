@@ -8,7 +8,7 @@
                     <form class="auth-form" action="" method="" @submit.prevent="submit">
                         <alert-error :form="form" v-if="form.errors.has('verification')">
                             {{ form.errors.get('verification') }}
-                        <nuxt-link :to="{name:'verificationResend'}">Resend email</nuxt-link>
+                        <nuxt-link :to="{name:'verification.resend'}">Resend email</nuxt-link>
 
                         </alert-error>
                         <div class="form-group">
@@ -37,7 +37,10 @@
                             <a class="forgot-pass color-blue font-14 fw-400" href="#"> Forgot password? </a>
                         </div>
                         <div class="text-right">
-                            <button type="submit" class="btn btn-primary primary-bg-color font-16 fw-500 text-uppercase">
+                            <button type="submit" :disabled="form.busy" class="btn btn-primary primary-bg-color font-16 fw-500 text-uppercase">
+                                <span v-if="form.busy">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                </span>
                                 Login
                             </button>
                         </div>
