@@ -12,38 +12,34 @@
 
                         </alert-success>
                         <div class="form-group">
-                            <input
-                                type="text"
-                                v-model="form.email"
-                                readonly
-                                name="email"
-                                class="form-control form-control-lg font-14 fw-300"
-                                :class="{ 'is-invalid': form.errors.has('email') }"
-                                placeholder="Email"
-                            />
-                            <has-error :form="form" field="email"></has-error>
+                        <base-input 
+                        :form="form"
+                        readonly="true"
+                        customClass="fares form-control form-control-lg font-14 fw-300"
+                        field="email"
+                        v-model="form.email"
+                        placeholder="Email"
+                        ></base-input>
                         </div>
                             <div class="form-group">
-                            <input
-                                type="password"
-                                v-model="form.password"
-                                name="password"
-                                class="form-control form-control-lg font-14 fw-300"
-                                :class="{ 'is-invalid': form.errors.has('password') }"
-                                placeholder="Password"
-                            />
-                            <has-error :form="form" field="password"></has-error>
+                            <base-input 
+                            :form="form"
+                            customClass="fares form-control form-control-lg font-14 fw-300"
+                            field="password"
+                            inputType="password"
+                            v-model="form.password"
+                            placeholder="Password"
+                            ></base-input>
                         </div>
-                                                    <div class="form-group">
-                            <input
-                                type="password"
-                                v-model="form.password_confirmation"
-                                name="password_confirmation"
-                                class="form-control form-control-lg font-14 fw-300"
-                                :class="{ 'is-invalid': form.errors.has('password_confirmation') }"
-                                placeholder="Password Confirmation"
-                            />
-                            <has-error :form="form" field="password_confirmation"></has-error>
+                             <div class="form-group">
+                            <base-input 
+                            :form="form"
+                            customClass="fares form-control form-control-lg font-14 fw-300"
+                            field="password_confirmation"
+                            inputType="password"
+                            v-model="form.password_confirmation"
+                            placeholder="Password Confirmation"
+                            ></base-input>
                         </div>
 
                         <div class="mt-4 mb-4 clearfix">

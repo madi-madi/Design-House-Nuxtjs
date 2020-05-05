@@ -11,15 +11,14 @@
                     </alert-success>
 
                         <div class="form-group">
-                            <input
-                                v-model="form.email"
-                                type="text"
-                                name="email"
-                                class="form-control form-control-lg font-14 fw-300"
-                                :class="{ 'is-invalid': form.errors.has('email') }"
-                                placeholder="Email"
-                            />
-                            <has-error :form="form" field="email"></has-error>
+                        <base-input 
+                        :form="form"
+                        readonly="true"
+                        customClass="fares form-control form-control-lg font-14 fw-300"
+                        field="email"
+                        v-model="form.email"
+                        placeholder="Email"
+                        ></base-input>
                         </div>
                         
                         <div class="text-right">

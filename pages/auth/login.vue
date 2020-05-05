@@ -12,26 +12,23 @@
 
                         </alert-error>
                         <div class="form-group">
-                            <input
-                                type="text"
-                                v-model="form.email"
-                                name="email"
-                                class="form-control form-control-lg font-14 fw-300"
-                                :class="{ 'is-invalid': form.errors.has('email') }"
-                                placeholder="Email"
-                            />
-                            <has-error :form="form" field="email"></has-error>
+                        <base-input 
+                        :form="form"
+                        readonly="true"
+                        customClass="fares form-control form-control-lg font-14 fw-300"
+                        field="email"
+                        v-model="form.email"
+                        placeholder="Email"
+                        ></base-input>
                         </div>
                         <div class="form-group">
-                            <input
-                                v-model="form.password"
-                                type="password"
-                                name="password"
-                                class="form-control form-control-lg font-14 fw-300"
-                                :class="{ 'is-invalid': form.errors.has('password') }"
-                                placeholder="Password"
-                            />
-                            <has-error :form="form" field="password"></has-error>
+                        <base-input 
+                        :form="form"
+                        customClass="fares form-control form-control-lg font-14 fw-300"
+                        field="password"
+                        v-model="form.password"
+                        placeholder="Password"
+                        ></base-input>
                         </div>
                         <div class="mt-4 mb-4 clearfix">
                             <nuxt-link class="forgot-pass color-blue font-14 fw-400"

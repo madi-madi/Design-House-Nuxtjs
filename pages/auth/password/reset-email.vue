@@ -10,15 +10,14 @@
                                 {{ form.message }}
                         </alert-success>
                         <div class="form-group">
-                            <input
-                                type="text"
-                                v-model="form.email"
-                                name="email"
-                                class="form-control form-control-lg font-14 fw-300"
-                                :class="{ 'is-invalid': form.errors.has('email') }"
-                                placeholder="Email"
-                            />
-                            <has-error :form="form" field="email"></has-error>
+
+                        <base-input 
+                        :form="form"
+                        customClass="fares form-control form-control-lg font-14 fw-300"
+                        field="email"
+                        v-model="form.email"
+                        placeholder="Email"
+                        ></base-input>
                         </div>
 
                         <div class="mt-4 mb-4 clearfix">

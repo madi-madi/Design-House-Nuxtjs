@@ -1,6 +1,7 @@
 <template>
   <div>
     <input
+      :autocomplete="autocomplete"
       :type="inputType"
       :value="value"
       :readonly="readonly"
@@ -21,7 +22,8 @@ export default {
     placeholder: {type: String,default: ''},
     customClass: {type: String,default: ''},
     inputType: {type: String,default: 'text'},
-    readonly: {type: Boolean,default: false}
+    readonly: {type: Boolean,default: false},
+    autocomplete: {type: Boolean,default: false}
   },
 
   methods: {
