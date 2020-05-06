@@ -14,7 +14,6 @@
                         <div class="form-group">
                         <base-input 
                         :form="form"
-                        readonly="true"
                         customClass="fares form-control form-control-lg font-14 fw-300"
                         field="email"
                         v-model="form.email"
