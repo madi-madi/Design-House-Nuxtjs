@@ -22,12 +22,17 @@
                         </div>
                         
                         <div class="text-right">
-                            <button type="submit" :disabled="form.busy" class="btn btn-primary primary-bg-color font-16 fw-500 text-uppercase">
+                        <base-button 
+                        :loading="form.busy"
+                        >
+                        Resend
+                        </base-button>
+                            <!-- <button type="submit" :disabled="form.busy" class="btn btn-primary primary-bg-color font-16 fw-500 text-uppercase">
                                 <span v-if="form.busy">
                                 <i class="fas fa-spinner fa-spin"></i>
                                 </span>
                                 Resend
-                            </button>
+                            </button> -->
                         </div>
                     </form>
                 </div>

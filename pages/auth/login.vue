@@ -38,12 +38,18 @@
                                 Forgot password? </nuxt-link>
                         </div>
                         <div class="text-right">
-                            <button type="submit" :disabled="form.busy" class="btn btn-primary primary-bg-color font-16 fw-500 text-uppercase">
+                            <base-button 
+                            :loading="form.busy"
+
+                            >
+                            Login
+                            </base-button>
+                            <!-- <button type="submit" :disabled="form.busy" class="btn btn-primary primary-bg-color font-16 fw-500 text-uppercase">
                                 <span v-if="form.busy">
                                 <i class="fas fa-spinner fa-spin"></i>
                                 </span>
                                 Login
-                            </button>
+                            </button> -->
                         </div>
                         <p class="font-14 fw-400 text-center mt-4">
                             Don't have an account yet?
