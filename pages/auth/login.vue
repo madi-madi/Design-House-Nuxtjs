@@ -26,6 +26,7 @@
                         :form="form"
                         customClass="fares form-control form-control-lg font-14 fw-300"
                         field="password"
+                        inputType="password"
                         v-model="form.password"
                         placeholder="Password"
                         ></base-input>
