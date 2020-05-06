@@ -39,6 +39,29 @@ const routes = [
     name: 'designs.edit',
     component: page('user/designs/edit.vue')
   },
+
+  {
+    path: '/settings',
+    component: page('user/settings/index.vue'),
+    children: [
+      { path: '', redirect: { name: 'settings.dashboard' } },
+      {
+        path: 'dashboard',
+        name: 'settings.dashboard',
+        component: page('user/settings/dashboard.vue')
+      },
+      {
+        path: 'profile',
+        name: 'settings.profile',
+        component: page('user/settings/profile.vue')
+      },
+      {
+        path: 'designs',
+        name: 'settings.designs',
+        component: page('user/settings/designs.vue')
+      }
+    ]
+  },
 ];
 
 export function createRouter() {

@@ -163,7 +163,9 @@ export default {
       this.form
         .post(`/designs/${this.$route.params.id}`)
         .then(res => {
-
+          setTimeout(() => {
+            this.$router.push({ name: 'settings.designs' });
+          }, 1000);
         })
         .catch(err => console.log(err.response));
     }
