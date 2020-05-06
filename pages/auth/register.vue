@@ -5,7 +5,7 @@
                     <h1 class="text-uppercase fw-500 mb-4 text-center font-22">
                         Register
                     </h1>
-                    <form class="auth-form" @submit.prevent="submit">
+                    <form class="auth-form" @submit.prevent="submit" autocomplete="on">
                         <alert-success :form="form"> Done </alert-success>
                         <div class="form-group">
                         <base-input 
@@ -86,6 +86,7 @@
 
 <script>
 export default {
+middleware:['guest'],
 data(){
     return {
         form:this.$vform({
