@@ -29,7 +29,16 @@ const routes = [
     name: 'user.dashboard',
     component: page('user/dashboard.vue')
   },
-
+  { 
+    path: '/designs/upload',
+    name: 'designs.upload',
+    component: page('user/designs/create.vue')
+  },
+  { 
+    path: '/designs/:id/edit',
+    name: 'designs.edit',
+    component: page('user/designs/edit.vue')
+  },
 ];
 
 export function createRouter() {
