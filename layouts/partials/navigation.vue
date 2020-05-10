@@ -21,7 +21,7 @@
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="navbar-nav font-14 fw-300">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#" title="Shots">Designs</a>
+                            <nuxt-link class="nav-link" :to="{name:'settings.designs'}" title="Shots">Designs</nuxt-link>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#" title="Designers"
@@ -118,10 +118,10 @@
                                 <i class="fa fa-user"></i>
                                 Profile
                             </a>
-                            <a class="dropdown-item" href="#" title="Setting">
+                            <nuxt-link class="dropdown-item" :to="{name:'settings.dashboard'}" title="Setting">
                                 <i class="fa fa-cogs"></i>
                                 Setting
-                            </a>
+                            </nuxt-link>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="javascript:;" @click.prevent="logout" title="Sign Out">
                                 <i class="fa fa-lock"></i>
