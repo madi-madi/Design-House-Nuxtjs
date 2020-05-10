@@ -45,7 +45,8 @@ export default {
   plugins: [
     '~/plugins/vform.js',
     '~/components/_global',
-    {src:'~/plugins/gmaps',ssr:false}
+    {src:'~/plugins/gmaps',ssr:false},
+    {src:'~/plugins/main',ssr:false}
   ],
   /*
   ** Nuxt.js dev-modules
@@ -65,6 +66,13 @@ export default {
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    [
+      'vue-sweetalert2/nuxt',
+      {
+        confirmButtonColor: '#41b882',
+        cancelButtonColor: '#ff7674'
+      }
+    ]
   ],
   /*
   ** Axios module configuration

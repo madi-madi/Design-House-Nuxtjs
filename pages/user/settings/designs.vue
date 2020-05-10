@@ -16,17 +16,22 @@
           <tr v-for="design in designs" :key="design.id">
             <td>
               <div v-if="design.images">
-                <img :src="design.images.thumbnail" width="100" />
+                <img :src="design.images.thumbnail" width="50" />
               </div>
             </td>
             <td>{{ design.title }}</td>
             <td>{{ design.is_live ? 'Published' : 'Draft' }}</td>
             <td>
               <nuxt-link
+                class="btn btn-info"
                 :to="{ name: 'designs.edit', params: { id: design.id } }"
               >
-                Edit
+              <i class="fas fa-edit"></i>
+                
               </nuxt-link>
+              <!-- <a href="" class="btn btn-danger"> <i class="fas fa-trash"></i></a> -->
+                    
+                <base-delete @deleted="handleDelete" type="danger" :id="design.id"   :url="`designs/${design.id}/delete`" ><i class="fas fa-trash"></i></base-delete>
             </td>
           </tr>
         </tbody>
@@ -46,13 +51,19 @@ export default {
 
   methods: {
     async fetchUserDesigns() {
-      const { ism } = await this.$axios.$get(
+       await this.$axios.$get(
         `/users/${this.$auth.user.id}/designs`
       ).then(res=>{
         console.log(res);
       this.designs = res.item;
       }).catch(err=>{});
-    }
+    },
+
+        handleDelete(id) {
+      this.designs = this.designs.filter(design => design.id !== id);
+    },
+
+
   },
 
   created() {
