@@ -24,7 +24,7 @@
                                              <p> {{ errors }}</p>
                                         </div>
                                         <slim-cropper :options="slimOptions">
-                                         <input type="file" name="image">
+                                         <input type="file" name="image[]">
                                         </slim-cropper>
                                         <div class="text-success caption-sm m2" v-if="uploading">
                                             <i class="fas fa-spinner fa-spin"></i>
@@ -51,7 +51,7 @@ data(){
     slimOptions:{
       service:this.slimService,
       post:'output',
-      defaultInputName:'image',
+      defaultInputName:"image[]",
       minSize:'800,600',
       lable:'Select Image ',
       maxFileSize: 2 ,// 2mb

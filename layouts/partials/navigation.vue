@@ -48,9 +48,9 @@
                     <div
                         class="upload-shot white-path font-14 fw-500 text-uppercase mr-auto"
                     >
-                        <a href="#" class="primary-bg-color text-white">
+                        <nuxt-link :to="{name:'designs.upload'}" class="primary-bg-color text-white">
                             <i class="fas fa-cloud-upload-alt"></i> Upload
-                        </a>
+                        </nuxt-link>
                     </div>
                 </div>
 
@@ -86,15 +86,15 @@
                         >
                             <img
                                 class="user-thumb"
-                                src="~assets/images/profile.png"
+                                :src="$auth.user.photo_url"
                                 alt="Neba Funwi-Gabga"
                             />
                             <div class="usr-info">
                                 <span class="user-name font-14 fw-500"
-                                    >John Doe</span
+                                    >{{$auth.user.name}}</span
                                 >
                                 <span class="user-deg font-10 fw-300"
-                                    >Sr. UI Designer</span
+                                    >{{$auth.user.username}}</span
                                 >
                                 <span class="down-chevron">
                                     <i class="fa fa-angle-down"></i>
@@ -110,14 +110,14 @@
                                     >Your Account</span
                                 >
                             </div>
-                            <a
+                            <nuxt-link
+                                :to="{name:'settings.profile'}"
                                 class="dropdown-item mt-28"
-                                href="#"
                                 title="Profile"
                             >
                                 <i class="fa fa-user"></i>
                                 Profile
-                            </a>
+                            </nuxt-link>
                             <nuxt-link class="dropdown-item" :to="{name:'settings.dashboard'}" title="Setting">
                                 <i class="fa fa-cogs"></i>
                                 Setting
